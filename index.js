@@ -11,12 +11,6 @@ function Book(title, author, pages, read) {
   };
 }
 
-function addBookToLibrary() {
-  // do stuff here
-
-}
-
-
 //----------------------
 const buttonClicked = document.querySelector(".newBook");
 buttonClicked.addEventListener("click", openForm);
@@ -24,14 +18,15 @@ function openForm() {
   document.getElementById('formContainer').style.display = 'block';
 }
 
-// Function to close the form
+// Function to close the form by changing the display
 function closeForm() {
   document.getElementById('formContainer').style.display = 'none';
 }
 
 const submitBtn = document.querySelector(".submit-btn");
 submitBtn.addEventListener("click", function(){
- 
+
+  // Get values from the form
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
   const pages = document.getElementById('pages').value;
@@ -43,7 +38,8 @@ submitBtn.addEventListener("click", function(){
   // Create new Book object
   const newBook = new Book(title, author, pages, read);
 
-  // myLibrary.push(newBook);
+  // Add book to library  
+  myLibrary.push(newBook);
   // Create a new div to display the book
   const bookDiv = document.createElement('div');
   bookDiv.classList.add('book');
@@ -55,11 +51,22 @@ submitBtn.addEventListener("click", function(){
   removeBtn.addEventListener('click', function() {
       bookDiv.remove(); // Remove the book div when button is clicked
   });
+  const readBtn = document.createElement('button');
+  readBtn.classList.add('read-btn');
+  readBtn.textContent = newBook.read;
+  readBtn.addEventListener('click', function() {
+      newBook.read = newBook.read === "read" ? "not read" : "read";
+      readBtn.textContent = newBook.read;
+      bookDiv.textContent = newBook.info();
+      bookDiv.appendChild(removeBtn);
+      bookDiv.appendChild(readBtn);
+  });
 
   // Append remove button to the book div
-  bookDiv.appendChild(removeBtn);
+    bookDiv.appendChild(removeBtn);
+    bookDiv.appendChild(readBtn);
 
   document.getElementById('bookDisplay').appendChild(bookDiv);
   document.getElementById('bookForm').reset();
-  document.getElementById('formContainer').style.display = 'none';
+  closeForm();  
 });

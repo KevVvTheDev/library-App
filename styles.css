@@ -5,6 +5,17 @@ body{
 	animation: gradient 5s ease infinite;
 	height: 100vh;
 }
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 button {
     padding: 10px 20px;
@@ -44,12 +55,12 @@ button {
 #formContainer{
     display: none;
     position: fixed;
-    top: 50%; 
+    top: 60%; 
     left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(255, 195, 106);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     /* z-index: 1000; */
@@ -95,6 +106,7 @@ input:valid {
 
 .book {
     display: flex;
+    gap: 10px;
     flex-direction: column;
     padding: 5px;
     border: 1px solid #ccc;
@@ -106,5 +118,5 @@ input:valid {
     font-family: 'Courier New', Courier, monospace;
     justify-content: center;
     align-items: center;
-    background-color: aliceblue;
+    background-color: #FE9090;
 }
