@@ -16,6 +16,37 @@
         <button class="newBook"> Add Book</button>
     </div>
 
+    <!-- this container will hold the form and be hidden by default -->
+    <div id="formContainer">
+        <button class="close-btn" onclick="closeForm()">X</button>
+        <form id="bookForm">
+            <h2>Book Information</h2>
+
+            <!-- Title input -->
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" placeholder="Enter book title" required>
+            
+            <!-- Author input -->
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" placeholder="Enter author name" required>
+
+            <!-- Page count input -->
+            <label for="pages">Page Count:</label>
+            <input type="number" id="pages" name="pages" placeholder="Enter number of pages" required>
+
+            <!-- Checkbox for read status -->
+            <div class="checkbox-group">      
+                <label for="readStatus">Have you read it?</label>
+                <input type="checkbox" id="readStatus" name="readStatus">
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <div id="bookDisplay"></div>
+
     <script src="index.js"></script>
 </body>
 </html>
