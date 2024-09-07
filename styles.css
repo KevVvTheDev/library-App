@@ -1,0 +1,26 @@
+body{
+    
+}
+
+.header{
+    text-align: center;
+    border: 2px solid black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    background-color: antiquewhite;
+}
+
+.instruction{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.newBook{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    background-color: rgb(153, 153, 207);
+    border: none;
+    border-radius: 30px;
+    height: 60px;
+    width: 100px;
+}
